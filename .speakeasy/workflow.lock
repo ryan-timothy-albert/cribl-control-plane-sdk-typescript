@@ -1,0 +1,37 @@
+speakeasyVersion: 1.573.0
+sources:
+    Cribl API Reference:
+        sourceNamespace: cribl-api-reference
+        sourceRevisionDigest: sha256:58aa96e36098aa8e683c72818a122a444dbe797653d30f2836a4b3600d47c816
+        sourceBlobDigest: sha256:8aba1cece107defabe75ae491b8d5df28b7b794b15c65142107285bdc24a878d
+        tags:
+            - latest
+            - 4.12.2-4b17c8d4
+targets:
+    cribl-control-plane:
+        source: Cribl API Reference
+        sourceNamespace: cribl-api-reference
+        sourceRevisionDigest: sha256:58aa96e36098aa8e683c72818a122a444dbe797653d30f2836a4b3600d47c816
+        sourceBlobDigest: sha256:8aba1cece107defabe75ae491b8d5df28b7b794b15c65142107285bdc24a878d
+        codeSamplesNamespace: cribl-api-reference-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:6c307b7fb9a5d7ebb0841c8b685f0cd5435633be74ca77e454f561753ed9a11d
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Cribl API Reference:
+            inputs:
+                - location: ./openapi.yml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/cribl/cribl/cribl-api-reference
+    targets:
+        cribl-control-plane:
+            target: typescript
+            source: Cribl API Reference
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/cribl/cribl/cribl-api-reference-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false
