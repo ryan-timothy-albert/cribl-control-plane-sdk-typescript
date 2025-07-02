@@ -3,8 +3,8 @@ id: d194774b-8596-4eb8-b73a-3a28004d94eb
 management:
   docChecksum: a553a9a8d1809f95d5324f3fc5fb5705
   docVersion: 4.12.2-4b17c8d4
-  speakeasyVersion: 1.573.0
-  generationVersion: 2.644.1
+  speakeasyVersion: 1.574.1
+  generationVersion: 2.647.2
   releaseVersion: 0.0.1
   configChecksum: 018c8029ce1551ea60c8ef3071765da0
 features:
@@ -19,7 +19,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.5
-    mcpServer: 0.9.2
+    mcpServer: 0.9.3
     methodArguments: 0.1.2
     mockServer: 0.1.1
     responseFormat: 0.2.3
