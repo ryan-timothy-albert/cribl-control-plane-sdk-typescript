@@ -11,6 +11,9 @@ targets:
     cribl-control-plane:
         target: typescript
         source: Cribl API Reference
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/cribl/cribl/cribl-api-reference-typescript-code-samples
