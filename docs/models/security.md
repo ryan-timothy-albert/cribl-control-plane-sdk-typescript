@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Security } from "cribl-control-plane";
+import { Security } from "cribl-control-plane/models";
 
 let value: Security = {};
 ```

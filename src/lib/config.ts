@@ -59,7 +59,7 @@ export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "4.12.2-4b17c8d4",
   sdkVersion: "0.0.1",
-  genVersion: "2.647.2",
+  genVersion: "2.656.5",
   userAgent:
-    "speakeasy-sdk/typescript 0.0.1 2.647.2 4.12.2-4b17c8d4 cribl-control-plane",
+    "speakeasy-sdk/typescript 0.0.1 2.656.5 4.12.2-4b17c8d4 cribl-control-plane",
 } as const;
