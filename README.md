@@ -222,11 +222,11 @@ run();
 
 ### [diag](docs/sdks/diag/README.md)
 
-* [getHealthInfo](docs/sdks/diag/README.md#gethealthinfo) - Provides health info for REST server
+* [getHealthInfo](docs/sdks/diag/README.md#gethealthinfo) - Provides health idfsfnfo for REST server
 
 ### [health](docs/sdks/health/README.md)
 
-* [getHealthInfo](docs/sdks/health/README.md#gethealthinfo) - Provides health info for REST server
+* [getHealthInfo](docs/sdks/health/README.md#gethealthinfo) - Provides health idfsfnfo for REST server
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -246,8 +246,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`diagGetHealthInfo`](docs/sdks/diag/README.md#gethealthinfo) - Provides health info for REST server
-- [`diagGetHealthInfo`](docs/sdks/health/README.md#gethealthinfo) - Provides health info for REST server
+- [`diagGetHealthInfo`](docs/sdks/diag/README.md#gethealthinfo) - Provides health idfsfnfo for REST server
+- [`diagGetHealthInfo`](docs/sdks/health/README.md#gethealthinfo) - Provides health idfsfnfo for REST server
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
