@@ -80,7 +80,10 @@ Add the following server definition to your `claude_desktop_config.json` file:
         "--",
         "mcp", "start",
         "--server-url", "...",
-        "--bearer-auth", "..."
+        "--bearer-auth", "...",
+        "--client-id", "...",
+        "--client-secret", "...",
+        "--token-url", "..."
       ]
     }
   }
@@ -104,7 +107,10 @@ Create a `.cursor/mcp.json` file in your project root with the following content
         "--",
         "mcp", "start",
         "--server-url", "...",
-        "--bearer-auth", "..."
+        "--bearer-auth", "...",
+        "--client-id", "...",
+        "--client-secret", "...",
+        "--token-url", "..."
       ]
     }
   }
@@ -178,19 +184,22 @@ run();
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security scheme globally:
+This SDK supports the following security schemes globally:
 
-| Name         | Type | Scheme      | Environment Variable            |
-| ------------ | ---- | ----------- | ------------------------------- |
-| `bearerAuth` | http | HTTP Bearer | `CRIBLCONTROLPLANE_BEARER_AUTH` |
+| Name          | Type   | Scheme       | Environment Variable             |
+| ------------- | ------ | ------------ | -------------------------------- |
+| `bearerAuth`  | http   | HTTP Bearer  | `CRIBLCONTROLPLANE_BEARER_AUTH`  |
+| `clientOauth` | oauth2 | OAuth2 token | `CRIBLCONTROLPLANE_CLIENT_OAUTH` |
 
-To authenticate with the API the `bearerAuth` parameter must be set when initializing the SDK client instance. For example:
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
 import { CriblControlPlane } from "cribl-control-plane";
 
 const criblControlPlane = new CriblControlPlane({
   serverURL: "https://api.example.com",
-  bearerAuth: process.env["CRIBLCONTROLPLANE_BEARER_AUTH"] ?? "",
+  security: {
+    bearerAuth: process.env["CRIBLCONTROLPLANE_BEARER_AUTH"] ?? "",
+  },
 });
 
 async function run() {

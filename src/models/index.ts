@@ -3,4 +3,5 @@
  */
 
 export * from "./healthstatus.js";
+export * from "./schemeclientoauth.js";
 export * from "./security.js";

@@ -6,9 +6,16 @@ import * as z from "zod";
 import { safeParse } from "../lib/schemas.js";
 import { Result as SafeParseResult } from "../types/fp.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
+import {
+  SchemeClientOauth,
+  SchemeClientOauth$inboundSchema,
+  SchemeClientOauth$Outbound,
+  SchemeClientOauth$outboundSchema,
+} from "./schemeclientoauth.js";
 
 export type Security = {
   bearerAuth?: string | undefined;
+  clientOauth?: SchemeClientOauth | undefined;
 };
 
 /** @internal */
@@ -18,11 +25,13 @@ export const Security$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   bearerAuth: z.string().optional(),
+  clientOauth: SchemeClientOauth$inboundSchema.optional(),
 });
 
 /** @internal */
 export type Security$Outbound = {
   bearerAuth?: string | undefined;
+  clientOauth?: SchemeClientOauth$Outbound | undefined;
 };
 
 /** @internal */
@@ -32,6 +41,7 @@ export const Security$outboundSchema: z.ZodType<
   Security
 > = z.object({
   bearerAuth: z.string().optional(),
+  clientOauth: SchemeClientOauth$outboundSchema.optional(),
 });
 
 /**

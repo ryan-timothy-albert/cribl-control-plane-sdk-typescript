@@ -247,6 +247,17 @@ export function resolveGlobalSecurity(
         value: security?.bearerAuth ?? env().CRIBLCONTROLPLANE_BEARER_AUTH,
       },
     ],
+    [
+      {
+        type: "oauth2:client_credentials",
+        value: {
+          clientID: security?.clientOauth?.clientID
+            ?? env().CRIBLCONTROLPLANE_CLIENT_ID,
+          clientSecret: security?.clientOauth?.clientSecret
+            ?? env().CRIBLCONTROLPLANE_CLIENT_SECRET,
+        },
+      },
+    ],
   );
 }
 
