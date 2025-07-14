@@ -54,7 +54,7 @@ paths:
   /health:
     get:
       operationId: getHealthInfo
-      summary: Provides health info for REST server
+      summary: Provides health idfsfnfo for REST server
       security: []
       tags:
         - diag

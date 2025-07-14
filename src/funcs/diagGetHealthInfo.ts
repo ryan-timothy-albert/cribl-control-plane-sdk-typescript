@@ -23,7 +23,7 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Provides health info for REST server
+ * Provides health idfsfnfo for REST server
  */
 export function diagGetHealthInfo(
   client: CriblControlPlaneCore,
