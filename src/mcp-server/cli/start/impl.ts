@@ -18,6 +18,9 @@ interface StartCommandFlags {
   readonly port: number;
   readonly tool?: string[];
   readonly "bearer-auth"?: string | undefined;
+  readonly "client-id"?: string | undefined;
+  readonly "client-secret"?: string | undefined;
+  readonly "token-url": string;
   readonly "server-url": string;
   readonly "server-index"?: SDKOptions["serverIdx"];
   readonly "log-level": ConsoleLoggerLevel;
@@ -47,7 +50,16 @@ async function startStdio(flags: StartCommandFlags) {
   const server = createMCPServer({
     logger,
     allowedTools: flags.tool,
-    ...{ bearerAuth: flags["bearer-auth"] ?? "" },
+    security: {
+      bearerAuth: flags["bearer-auth"] ?? "",
+      clientOauth: flags["client-id"] != null && flags["client-secret"] != null
+        ? {
+          clientID: flags["client-id"],
+          clientSecret: flags["client-secret"],
+          tokenURL: flags["token-url"],
+        }
+        : void 0,
+    },
     serverURL: flags["server-url"],
     serverIdx: flags["server-index"],
   });
@@ -67,7 +79,16 @@ async function startSSE(flags: StartCommandFlags) {
   const mcpServer = createMCPServer({
     logger,
     allowedTools: flags.tool,
-    ...{ bearerAuth: flags["bearer-auth"] ?? "" },
+    security: {
+      bearerAuth: flags["bearer-auth"] ?? "",
+      clientOauth: flags["client-id"] != null && flags["client-secret"] != null
+        ? {
+          clientID: flags["client-id"],
+          clientSecret: flags["client-secret"],
+          tokenURL: flags["token-url"],
+        }
+        : void 0,
+    },
     serverURL: flags["server-url"],
     serverIdx: flags["server-index"],
   });

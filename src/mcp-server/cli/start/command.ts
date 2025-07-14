@@ -44,6 +44,32 @@ export const startCommand = buildCommand({
           return z.string().parse(value);
         },
       },
+      "client-id": {
+        kind: "parsed",
+        brief: "Sets the clientID auth field for the API",
+        optional: true,
+        parse: (value) => {
+          return z.string().parse(value);
+        },
+      },
+      "client-secret": {
+        kind: "parsed",
+        brief: "Sets the clientSecret auth field for the API",
+        optional: true,
+        parse: (value) => {
+          return z.string().parse(value);
+        },
+      },
+      "token-url": {
+        kind: "parsed",
+        brief: "Sets the tokenURL auth field for the API",
+        optional: false,
+        default: "https://login.cribl.cloud/oauth/token",
+        parse: (value) => {
+          return z.string().default("https://login.cribl.cloud/oauth/token")
+            .parse(value);
+        },
+      },
       "server-url": {
         kind: "parsed",
         brief: "Overrides the default server URL used by the SDK",

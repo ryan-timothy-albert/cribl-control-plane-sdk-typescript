@@ -20,16 +20,16 @@ export function createMCPServer(deps: {
   allowedTools?: string[] | undefined;
   scopes?: MCPScope[] | undefined;
   serverURL: string;
-  bearerAuth?: SDKOptions["bearerAuth"] | undefined;
+  security?: SDKOptions["security"] | undefined;
   serverIdx?: SDKOptions["serverIdx"] | undefined;
 }) {
   const server = new McpServer({
     name: "CriblControlPlane",
-    version: "0.0.1",
+    version: "0.0.2",
   });
 
   const client = new CriblControlPlaneCore({
-    bearerAuth: deps.bearerAuth,
+    security: deps.security,
     serverURL: deps.serverURL,
     serverIdx: deps.serverIdx,
   });
