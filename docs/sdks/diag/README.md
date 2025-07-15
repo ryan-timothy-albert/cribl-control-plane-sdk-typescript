@@ -7,11 +7,11 @@ Actions related to diagnostics
 
 ### Available Operations
 
-* [getHealthInfo](#gethealthinfo) - Provides health info for REST server
+* [getHealthInfo](#gethealthinfo) - Provides health idfsfnfo for REST server
 
 ## getHealthInfo
 
-Provides health info for REST server
+Provides health idfsfnfo for REST server
 
 ### Example Usage
 
