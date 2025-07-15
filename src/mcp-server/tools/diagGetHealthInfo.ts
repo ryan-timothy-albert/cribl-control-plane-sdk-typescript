@@ -7,7 +7,7 @@ import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$diagGetHealthInfo: ToolDefinition = {
   name: "diag-get-health-info",
-  description: `Provides health info for REST server`,
+  description: `Provides health idfsfnfo for REST server`,
   tool: async (client, ctx) => {
     const [result, apiCall] = await diagGetHealthInfo(
       client,

@@ -9,7 +9,7 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Health extends ClientSDK {
   /**
-   * Provides health info for REST server
+   * Provides health idfsfnfo for REST server
    */
   async getHealthInfo(
     options?: RequestOptions,
